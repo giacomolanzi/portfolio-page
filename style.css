@@ -1,0 +1,100 @@
+/* Colori e variabili */
+
+:root {
+  --color-black: hsl(0, 0, 0);
+  --color-pale-grey: hsl(0, 0, 95%);
+  --color-white: hsl(0, 0, 100%);
+  --color-grey: hsl(0, 0, 62%);
+  --font-family-primary: "Open Sans";
+}
+
+/* Comportamento standard */
+
+body,
+html {
+  font-family: var(--font-family-primary), Verdana, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+body {
+  font-size: 1.6rem;
+}
+p {
+  font-weight: 200;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.8rem;
+}
+h6 {
+  font-size: 1.6rem;
+}
+:is(h1, h2, h3, h3, h5, h6) {
+  font-family: var(--font-family-primary), Arial, sans-serif;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+a {
+  color: inherit;
+}
+.gl-padding {
+  padding: 0.8rem 1.6rem;
+}
+.gl-padding-32 {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+.gl-padding-top-32 {
+  padding-top: 3.2rem;
+}
+.gl-image {
+  max-width: 100%;
+  height: auto;
+}
+.gl-white {
+  background-color: var(--color-white);
+}
+
+/* Navbar */
+.gl-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* z-index: 1; */
+}
+.gl-nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+}
+.gl-nav-logo,
+.gl-nav-items {
+  letter-spacing: 0.4rem;
+}
+.gl-nav-logo,
+.gl-nav-items a {
+  text-decoration: none;
+}
+.gl-nav-items {
+  text-align: right;
+}
+.gl-nav-items a:hover {
+  color: var(--color-grey);
+}
+.gl-nav-items {
+  display: flex;
+  justify-content: end;
+  padding-right: 2em;
+}
