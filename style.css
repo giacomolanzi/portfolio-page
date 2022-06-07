@@ -1,10 +1,12 @@
 /* Colori e variabili */
 
 :root {
-  --color-black: hsl(0, 0, 0);
+  --color-black: #000;
+  /* --color-black: hsl(0, 0, 0); */
   --color-pale-grey: hsl(0, 0, 95%);
-  --color-white: hsl(0, 0, 100%);
-  --color-grey: hsl(0, 0, 62%);
+  /* --color-white: hsl(0, 0, 100%); */
+  --color-white: #fff;
+  --color-grey: #9e9e9e;
   --font-family-primary: "Open Sans";
 }
 
@@ -48,16 +50,6 @@ h6 {
 a {
   color: inherit;
 }
-.gl-padding {
-  padding: 0.8rem 1.6rem;
-}
-.gl-padding-32 {
-  padding-top: 3.2rem;
-  padding-bottom: 3.2rem;
-}
-.gl-padding-top-32 {
-  padding-top: 3.2rem;
-}
 .gl-image {
   max-width: 100%;
   height: auto;
@@ -71,11 +63,13 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  /* z-index: 1; */
+  z-index: 1;
 }
 .gl-nav {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 2fr;
+  justify-content: space-between;
+
   width: 100%;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 }
@@ -94,7 +88,212 @@ a {
   color: var(--color-grey);
 }
 .gl-nav-items {
-  display: flex;
   justify-content: end;
+  align-self: center;
   padding-right: 2em;
+}
+
+/* Sezione hero */
+
+.gl-hero {
+  display: grid;
+  min-height: 50vw;
+  max-height: 70vh;
+  background-image: url("images/hero-cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Sezione progetto */
+
+.gl-portfolio-img {
+  width: 100%;
+}
+
+.gl-display-container {
+  position: relative;
+}
+.gl-display-topleft {
+  position: absolute;
+}
+
+/* Sezione Contatti */
+
+.gl-input {
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  display: block;
+  border: none;
+  border-bottom: 1px solid var(--color-grey);
+  width: 100%;
+}
+
+.gl-button {
+  font-size: 1.6rem;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1.5rem;
+}
+.gl-button:hover {
+  background-color: var(--color-grey);
+  color: var(--color-black);
+}
+
+/* Sezione testimonial */
+
+.gl-testimonial img {
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.gl-testimonial .name {
+  font-size: 1.6rem;
+  font-weight: 200;
+  line-height: 1;
+}
+.gl-testimonial .position {
+  font-size: 1.4rem;
+  opacity: 0.5;
+}
+.gl-testimonial > p:first-of-type {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.gl-testimonial > p:last-of-type {
+  opacity: 0.7;
+}
+
+.gl-testimonial-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+}
+
+.gl-testimonial-grid .gl-testimonial:nth-child(1) {
+  grid-area: one;
+}
+.gl-testimonial-grid .gl-testimonial:nth-child(2) {
+  grid-area: two;
+}
+.gl-testimonial-grid .gl-testimonial:nth-child(3) {
+  grid-area: three;
+}
+.gl-testimonial-grid .gl-testimonial:nth-child(4) {
+  grid-area: four;
+}
+.gl-testimonial-grid .gl-testimonial:nth-child(5) {
+  grid-area: five;
+}
+
+.gl-testimonial {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(217 19% 35% / 0.25);
+}
+
+/* Sezione Footer */
+
+footer {
+  padding: 3rem;
+}
+footer a:hover {
+  color: var(--color-grey);
+}
+
+/* Utility class */
+
+.bg-primary {
+  background-color: #abf4d8;
+}
+.bg-secondary {
+  background-color: #c7cdea;
+}
+
+.bg-neutral {
+  background-color: rgb(252, 238, 255);
+}
+
+.flex {
+  display: flex;
+  gap: 2em;
+}
+
+.gl-padding {
+  padding: 0.8rem 1.6rem;
+}
+.gl-padding-32 {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+.gl-padding-top-32 {
+  padding-top: 3.2rem;
+}
+
+.gl-center {
+  text-align: center;
+}
+.gl-text-black {
+  color: var(--color-black);
+}
+.gl-black {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+.gl-opacity-min {
+  opacity: 0.75;
+}
+
+.gl-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gl-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gl-container-wide {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gl-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Media query */
+
+@media (min-width: 571px) {
+  .gl-project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-testimonial-grid {
+    grid-template-areas:
+      "one one two"
+      "five five five"
+      "three four four";
+  }
+}
+
+@media (min-width: 821px) {
+  .gl-project {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gl-testimonial-grid {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
 }
